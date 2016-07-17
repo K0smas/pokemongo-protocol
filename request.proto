@@ -1,7 +1,13 @@
-message RequestEnvelop {
-  required int32 unknown1 = 1;
+message Request {
+  enum Type {
+    option allow_alias = true;
+    REQUEST_ENDPOINT = 2;
+    TWO = 2;
+  }
+
+  required Type type = 1;
   optional int64 rpc_id = 3;
-  repeated Requests requests = 4;
+  repeated Message messages = 4;
   optional Unknown6 unknown6 = 6;
   optional fixed64 gps_x = 7;
   optional fixed64 gps_y = 8;
@@ -9,9 +15,12 @@ message RequestEnvelop {
   optional AuthInfo auth = 10;
   optional int64 unknown12 = 12;
 
-  message Requests {
-    required int32 type = 1;
-    optional bytes message = 2;
+  message Message {
+    enum Type {
+      REQUEST_ENDPOINT = 2;
+    }
+    required Type type = 1;
+    optional bytes data = 2;
   }
 
   message Unknown6 {
@@ -32,3 +41,4 @@ message RequestEnvelop {
     }
   }
 }
+

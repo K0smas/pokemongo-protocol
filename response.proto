@@ -1,12 +1,22 @@
-message ResponseEnvelop {
-  required int32 id = 1;
+message Response {
+  enum Type {
+    OK = 1;
+    StillOK = 2;
+    AuthError = 102;
+  }
+
+  required Type type = 1;
   required int64 rpc_id = 2;
   optional string endpoint = 3;
   required Unknown6 unknown6 = 6;
-  repeated Response responses = 100;
+  repeated Payload payload = 100;
 
-  message Response {
-    required bytes message = 1;
+  message Payload {
+    enum Type {
+      OK = 1;
+    }
+    required Type type = 1;
+    optional bytes data = 2;
   }
 
   message Unknown6 {
@@ -17,7 +27,9 @@ message ResponseEnvelop {
       required int32 unknown1 = 1;
     }
   }
+
 }
+
 
 // --- List of message tiles for "response" --- \\
 message MapTile {
@@ -26,7 +38,7 @@ message MapTile {
   repeated Fort forts = 3;
   repeated ClientSpawnPoint spawn_point = 4; // grass?
   repeated WildPokemon wild_pokemon = 5;
-  optional int32 is_truncated = 1;
+  optional int32 is_truncated = 6;
   optional ClientSpawnPoint decimated_spawn_point = 9; //wtf?
   optional MapPokemon catchable_pokemon = 10;
   optional NearbyPokemon nearby_pokemon = 11;
@@ -87,7 +99,7 @@ message MapTile {
   message MapPokemon {
     required string spawn_point_id = 1;
     required fixed64 encounter_id = 2;
-    required int32 pkmn_no = 3
+    required int32 pkmn_no = 3;
     required int32 time = 4; //disapper time
     required fixed64 lat = 5;
     required fixed64 lng = 6;
