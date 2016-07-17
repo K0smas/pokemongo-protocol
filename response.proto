@@ -1,3 +1,5 @@
+import "pokemon.proto";
+
 message Response {
   enum Type {
     OK = 1;
@@ -16,6 +18,8 @@ message Response {
       OK = 1;
     }
     required Type type = 1;
+
+    // Interpret this in your code using e.g. ClientProfile().ParseFromString()
     optional bytes data = 2;
   }
 
