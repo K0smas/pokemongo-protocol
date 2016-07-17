@@ -1,13 +1,13 @@
 // thanks to tkpxer for the dump :)
 // types are wrong, and so are lot of field numbers
-message AssetDigestRequestProto {
+message AssetDigestRequest {
  required int32 Platform = 1;
  required int32 DeviceManufacturer = 2;
  required int32 DeviceModel = 3;
  required int32 Locale = 4;
  required int32 AppVersion = 5;
 }
-message AssetDigestEntryProto {
+message AssetDigestEntry {
  required int32 AssetId = 1;
  required int32 BundleName = 2;
  required int32 Version = 3;
@@ -15,62 +15,62 @@ message AssetDigestEntryProto {
  required int32 Size = 5;
  required int32 Key = 6;
 }
-message AssetDigestOutProto {
+message AssetDigestOut {
  required int32 Digest = 1;
  required int32 Timestamp = 2;
 }
-message DownloadUrlRequestProto {
+message DownloadUrlRequest {
  required int32 AssetId = 1;
 }
-message DownloadUrlEntryProto {
+message DownloadUrlEntry {
  required int32 AssetId = 1;
  required int32 Url = 2;
  required int32 Size = 3;
  required int32 Checksum = 4;
 }
-message DownloadUrlOutProto {
+message DownloadUrlOut {
  required int32 DownloadUrls = 1;
 }
-message CollectDailyBonusProto {
+message CollectDailyBonus {
 }
-message CollectDailyBonusOutProto {
+message CollectDailyBonusOut {
  required int32 Result = 1;
 }
-message CollectDailyDefenderBonusProto {
+message CollectDailyDefenderBonus {
 }
-message CollectDailyDefenderBonusOutProto {
+message CollectDailyDefenderBonusOut {
  required int32 Result = 1;
  required int32 CurrencyType = 2;
  required int32 CurrencyAwarded = 3;
  required int32 NumDefenders = 4;
 }
-message EchoProto {
+message Echo {
 }
-message EchoOutProto {
+message EchoOut {
  required int32 Context = 1;
 }
-message GetHatchedEggsProto {
+message GetHatchedEggs {
 }
-message GetHatchedEggsOutProto {
+message GetHatchedEggsOut {
  required int32 Success = 1;
  required int32 PokemonId = 2;
  required int32 ExpAwarded = 3;
  required int32 CandyAwarded = 4;
  required int32 StardustAwarded = 5;
 }
-message EncounterProto {
+message Encounter {
  required int32 EncounterId = 1;
  required int32 SpawnpointId = 2;
  required int32 PlayerLatDegrees = 3;
  required int32 PlayerLngDegrees = 4;
 }
-message EncounterOutProto {
+message EncounterOut {
  required int32 Pokemon = 1;
  required int32 Background = 2;
  required int32 Status = 3;
  required int32 CaptureProbability = 4;
 }
-message CatchPokemonProto {
+message CatchPokemon {
  required int32 EncounterId = 1;
  required int32 Pokeball = 2;
  required int32 NormalizedReticleSize = 3;
@@ -79,18 +79,18 @@ message CatchPokemonProto {
  required int32 SpinModifier = 6;
  required int32 NormalizedHitPosition = 7;
 }
-message CatchPokemonOutProto {
+message CatchPokemonOut {
  required int32 Status = 1;
  required int32 MissPercent = 2;
  required int32 CapturedPokemonId = 3;
  required int32 Scores = 4;
 }
-message UseItemCaptureProto {
+message UseItemCapture {
  required int32 Item = 1;
  required int32 EncounterId = 2;
  required int32 SpawnPointGuid = 3;
 }
-message UseItemCaptureOutProto {
+message UseItemCaptureOut {
  required int32 Success = 1;
  required int32 ItemCaptureMult = 2;
  required int32 ItemFleeMult = 3;
@@ -99,37 +99,37 @@ message UseItemCaptureOutProto {
  required int32 TargetMax = 6;
  required int32 TargetSlow = 7;
 }
-message EncounterTutorialCompleteProto {
+message EncounterTutorialComplete {
  required int32 PokedexId = 1;
 }
-message EncounterTutorialCompleteOutProto {
+message EncounterTutorialCompleteOut {
  required int32 Result = 1;
  required int32 Pokemon = 2;
  required int32 Scores = 3;
 }
-message CaptureProbabilityProto {
+message CaptureProbability {
  required int32 PokeballType = 1;
  required int32 CaptureProbability = 2;
  required int32 ReticleDifficultyScale = 12;
 }
-message CaptureScoreProto {
+message CaptureScore {
  required int32 ActivityType = 1;
  required int32 Exp = 2;
  required int32 Candy = 3;
  required int32 Stardust = 4;
 }
-message UseIncenseActionProto {
+message UseIncenseAction {
  required int32 IncenseType = 1;
 }
-message UseIncenseActionOutProto {
+message UseIncenseActionOut {
  required int32 Result = 1;
  required int32 AppliedIncense = 2;
 }
-message GetIncensePokemonProto {
+message GetIncensePokemon {
  required int32 PlayerLatDegrees = 1;
  required int32 PlayerLngDegrees = 2;
 }
-message GetIncensePokemonOutProto {
+message GetIncensePokemonOut {
  required int32 Result = 1;
  required int32 PokemonTypeId = 2;
  required int32 Lat = 3;
@@ -138,47 +138,47 @@ message GetIncensePokemonOutProto {
  required int32 EncounterId = 6;
  required int32 DisappearTimeMs = 7;
 }
-message IncenseEncounterProto {
+message IncenseEncounter {
  required int32 EncounterId = 1;
  required int32 EncounterLocation = 2;
 }
-message IncenseEncounterOutProto {
+message IncenseEncounterOut {
  required int32 Result = 1;
  required int32 Pokemon = 2;
  required int32 CaptureProbability = 3;
 }
-message DiskEncounterProto {
+message DiskEncounter {
  required int32 EncounterId = 1;
  required int32 FortId = 2;
  required int32 PlayerLatDegrees = 3;
  required int32 PlayerLngDegrees = 4;
 }
-message DiskEncounterOutProto {
+message DiskEncounterOut {
  required int32 Result = 1;
  required int32 Pokemon = 2;
  required int32 CaptureProbability = 3;
 }
-message EvolvePokemonProto {
+message EvolvePokemon {
  required int32 PokemonId = 1;
 }
-message EvolvePokemonOutProto {
+message EvolvePokemonOut {
  required int32 Result = 1;
  required int32 EvolvedPokemon = 2;
  required int32 ExpAwarded = 3;
  required int32 CandyAwarded = 4;
 }
-message AwardItemProto {
+message AwardItem {
  required int32 Item = 1;
  required int32 ItemCount = 2;
 }
-message FortSearchProto {
+message FortSearch {
  required int32 Id = 1;
  required int32 PlayerLatDegrees = 2;
  required int32 PlayerLngDegrees = 3;
  required int32 FortLatDegrees = 4;
  required int32 FortLngDegrees = 5;
 }
-message FortSearchOutProto {
+message FortSearchOut {
  required int32 Result = 1;
  required int32 Items = 2;
  required int32 GemsAwarded = 3;
@@ -187,12 +187,12 @@ message FortSearchOutProto {
  required int32 CooldownComplete = 6;
  required int32 ChainHackSequenceNumber = 7;
 }
-message FortDetailsProto {
+message FortDetails {
  required int32 Id = 1;
  required int32 Latitude = 2;
  required int32 Longitude = 3;
 }
-message FortDetailsOutProto {
+message FortDetailsOut {
  required int32 Id = 1;
  required int32 Team = 2;
  required int32 Pokemon = 3;
@@ -207,51 +207,51 @@ message FortDetailsOutProto {
  required int32 Description = 12;
  required int32 Modifier = 13;
 }
-message ClientFortModifierProto {
+message ClientFortModifier {
  required int32 ModifierType = 1;
  required int32 ExpirationTimeMs = 2;
  required int32 DeployingPlayerCodename = 3;
 }
-message FortDeployProto {
+message FortDeploy {
  required int32 FortId = 1;
  required int32 PokemonId = 2;
  required int32 PlayerLatDegrees = 3;
  required int32 PlayerLngDegrees = 4;
 }
-message FortDeployOutProto {
+message FortDeployOut {
  required int32 Result = 1;
- required int32 FortDetailsOutProto = 2;
+ required int32 FortDetailsOut = 2;
  required int32 EggPokemon = 3;
- required int32 GymStateProto = 4;
+ required int32 GymState = 4;
 }
-message FortRecallProto {
+message FortRecall {
  required int32 FortId = 1;
  required int32 PokemonId = 2;
  required int32 PlayerLatDegrees = 3;
  required int32 PlayerLngDegrees = 4;
 }
-message FortRecallOutProto {
+message FortRecallOut {
  required int32 Result = 1;
- required int32 FortDetailsOutProto = 2;
+ required int32 FortDetailsOut = 2;
 }
-message AddFortModifierProto {
+message AddFortModifier {
  required int32 ModifierType = 1;
  required int32 FortId = 2;
  required int32 PlayerLatDegrees = 3;
  required int32 PlayerLngDegrees = 4;
 }
-message AddFortModifierOutProto {
+message AddFortModifierOut {
  required int32 Result = 1;
- required int32 FortDetailsOutProto = 2;
+ required int32 FortDetailsOut = 2;
 }
-message PokemonCameraAttributesProto {
+message PokemonCameraAttributes {
  required int32 DiskRadiusM = 1;
  required int32 CylRadiusM = 2;
  required int32 CylHeightM = 3;
  required int32 CylGroundM = 4;
  required int32 ShoulderModeScale = 5;
 }
-message PokemonEncounterAttributesProto {
+message PokemonEncounterAttributes {
  required int32 BaseCaptureRate = 1;
  required int32 BaseFleeRate = 2;
  required int32 CollisionRadiusM = 3;
@@ -262,13 +262,13 @@ message PokemonEncounterAttributesProto {
  required int32 JumpTimeS = 8;
  required int32 AttackTimerS = 9;
 }
-message PokemonStatsAttributesProto {
+message PokemonStatsAttributes {
  required int32 BaseStamina = 1;
  required int32 BaseAttack = 2;
  required int32 BaseDefense = 3;
  required int32 DodgeEnergyDelta = 8;
 }
-message PokemonSettingsProto {
+message PokemonSettings {
  required int32 UniqueId = 1;
  required int32 ModelScale = 3;
  required int32 Type1 = 4;
@@ -291,44 +291,44 @@ message PokemonSettingsProto {
  required int32 FamilyId = 21;
  required int32 CandyToEvolve = 22;
 }
-message PokeBallAttributesProto {
+message PokeBallAttributes {
  required int32 ItemEffect = 1;
  required int32 CaptureMulti = 2;
  required int32 CaptureMultiEffect = 3;
  required int32 ItemEffectMod = 4;
 }
-message PotionAttributesProto {
+message PotionAttributes {
  required int32 StaPercent = 1;
  required int32 StaAmount = 2;
 }
-message ReviveAttributesProto {
+message ReviveAttributes {
  required int32 StaPercent = 1;
 }
-message BattleAttributesProto {
+message BattleAttributes {
  required int32 StaPercent = 1;
  required int32 AtkPercent = 2;
  required int32 DefPercent = 3;
  required int32 DurationS = 4;
 }
-message FoodAttributesProto {
+message FoodAttributes {
  required int32 ItemEffect = 1;
  required int32 ItemEffectPercent = 2;
  required int32 GrowthPercent = 3;
 }
-message InventoryUpgradeAttributesProto {
+message InventoryUpgradeAttributes {
  required int32 AdditionalStorage = 1;
  required int32 UpgradeType = 2;
 }
-message ExperienceBoostAttributesProto {
+message ExperienceBoostAttributes {
  required int32 XpMultiplier = 1;
  required int32 BoostDurationMs = 2;
 }
-message EggIncubatorAttributesProto {
+message EggIncubatorAttributes {
  required int32 IncubatorType = 1;
  required int32 Uses = 2;
  required int32 DistanceMultiplier = 3;
 }
-message IncenseAttributesProto {
+message IncenseAttributes {
  required int32 IncenseLifetimeSeconds = 1;
  required int32 PokemonType = 2;
  required int32 PokemonIncenseTypeProbability = 3;
@@ -337,11 +337,11 @@ message IncenseAttributesProto {
  required int32 DistanceRequiredForShorterIntervalMeters = 6;
  required int32 PokemonAttractedLengthSec = 7;
 }
-message FortModifierAttributesProto {
+message FortModifierAttributes {
  required int32 ModifierLifetimeSeconds = 1;
  required int32 TroyDiskNumPokemonSpawned = 2;
 }
-message ItemSettingsProto {
+message ItemSettings {
  required int32 UniqueId = 1;
  required int32 ItemType = 2;
  required int32 Category = 3;
@@ -358,14 +358,14 @@ message ItemSettingsProto {
  required int32 EggIncubator = 14;
  required int32 FortModifier = 15;
 }
-message IapItemDisplayProto {
+message IapItemDisplay {
  required int32 Sku = 1;
  required int32 Category = 2;
  required int32 SortOrder = 3;
  required int32 Items = 4;
  required int32 Counts = 5;
 }
-message MoveSettingsProto {
+message MoveSettings {
  required int32 UniqueId = 1;
  required int32 AnimationId = 2;
  required int32 Type = 3;
@@ -382,19 +382,19 @@ message MoveSettingsProto {
  required int32 DamageWindowEndMs = 14;
  required int32 EnergyDelta = 15;
 }
-message MoveSequenceSettingsProto {
+message MoveSequenceSettings {
  required int32 Sequence = 1;
 }
-message TypeEffectiveSettingsProto {
+message TypeEffectiveSettings {
  required int32 AttackType = 2;
  required int32 AttackScalar = 1;
 }
-message BadgeSettingsProto {
+message BadgeSettings {
  required int32 BadgeType = 1;
  required int32 BadgeRanks = 2;
  required int32 Targets = 3;
 }
-message CameraSettingsProto {
+message CameraSettings {
  required int32 NextCamera = 1;
  required int32 Interpolation = 2;
  required int32 TargetType = 3;
@@ -412,20 +412,20 @@ message CameraSettingsProto {
  required int32 HeightPercent = 15;
  required int32 VertCtrRatio = 16;
 }
-message PlayerLevelSettingsProto {
+message PlayerLevelSettings {
  required int32 RankNum = 1;
  required int32 RequiredExp = 2;
  required int32 CpMultiplier = 3;
  required int32 MaxEggPlayerLevel = 4;
  required int32 MaxEncounterPlayerLevel = 5;
 }
-message GymLevelSettingsProto {
+message GymLevelSettings {
  required int32 RequiredExp = 1;
  required int32 LeaderSlots = 2;
  required int32 TrainerSlots = 3;
  required int32 SearchRollBonus = 4;
 }
-message GymBattleSettingsProto {
+message GymBattleSettings {
  required int32 EnergyPerSec = 1;
  required int32 DodgeEnergyCost = 2;
  required int32 RetargetSeconds = 3;
@@ -441,14 +441,14 @@ message GymBattleSettingsProto {
  required int32 MinimumPlayerLevel = 13;
  required int32 SwapDurationMs = 14;
 }
-message EncounterSettingsProto {
+message EncounterSettings {
  required int32 SpinBonusThreshold = 1;
  required int32 ExcellentThrowThreshold = 2;
  required int32 GreatThrowThreshold = 3;
  required int32 NiceThrowThreshold = 4;
  required int32 MilestoneThreshold = 5;
 }
-message IapSettingsProto {
+message IapSettings {
  required int32 DailyBonusCoins = 1;
  required int32 DailyDefenderBonusPerPokemon = 2;
  required int32 DailyDefenderBonusMaxDefenders = 3;
@@ -457,18 +457,18 @@ message IapSettingsProto {
  required int32 DailyBonusEnabled = 6;
  required int32 DailyDefenderBonusEnabled = 7;
 }
-message PokemonUpgradeSettingsProto {
+message PokemonUpgradeSettings {
  required int32 UpgradesPerLevel = 1;
  required int32 AllowedLevelsAbovePlayer = 2;
  required int32 CandyCost = 3;
  required int32 StardustCost = 4;
 }
-message EquippedBadgeSettingsProto {
+message EquippedBadgeSettings {
  required int32 EquipBadgeCooldownMs = 1;
  required int32 CatchProbabilityBonus = 2;
  required int32 FleeProbabilityBonus = 3;
 }
-message GameMasterClientTemplateProto {
+message GameMasterClientTemplate {
  required int32 TemplateId = 1;
  required int32 Pokemon = 2;
  required int32 Item = 3;
@@ -486,26 +486,26 @@ message GameMasterClientTemplateProto {
  required int32 PokemonUpgrades = 18;
  required int32 EquippedBadges = 19;
 }
-message GetGameMasterClientTemplatesProto {
+message GetGameMasterClientTemplates {
 }
-message GetGameMasterClientTemplatesOutProto {
+message GetGameMasterClientTemplatesOut {
  required int32 Result = 1;
  required int32 Items = 2;
  required int32 Timestamp = 3;
 }
-message GetRemoteConfigVersionsProto {
+message GetRemoteConfigVersions {
  required int32 Platform = 1;
  required int32 DeviceManufacturer = 2;
  required int32 DeviceModel = 3;
  required int32 Locale = 4;
  required int32 AppVersion = 5;
 }
-message GetRemoteConfigVersionsOutProto {
+message GetRemoteConfigVersionsOut {
  required int32 Result = 1;
  required int32 GameMasterTimestamp = 2;
  required int32 AssetDigestTimestamp = 3;
 }
-message ClientMapCellProto {
+message ClientMapCell {
  required int32 S2CellId = 1;
  required int32 AsOfTimeMs = 2;
  required int32 Fort = 3;
@@ -518,47 +518,47 @@ message ClientMapCellProto {
  required int32 CatchablePokemon = 10;
  required int32 NearbyPokemon = 11;
 }
-message GetMapObjectsProto {
+message GetMapObjects {
  required int32 CellId = 1;
  required int32 SinceTimeMs = 2;
  required int32 PlayerLat = 3;
  required int32 PlayerLng = 4;
 }
-message GetMapObjectsOutProto {
+message GetMapObjectsOut {
  required int32 MapCell = 1;
  required int32 Status = 2;
 }
-message NearbyPokemonProto {
+message NearbyPokemon {
  required int32 PokedexNumber = 1;
  required int32 DistanceMeters = 2;
  required int32 EncounterId = 3;
 }
-message GetGymDetailsProto {
+message GetGymDetails {
  required int32 GymId = 1;
  required int32 PlayerLatDegrees = 2;
  required int32 PlayerLngDegrees = 3;
  required int32 GymLatDegrees = 4;
  required int32 GymLngDegrees = 5;
 }
-message GetGymDetailsOutProto {
+message GetGymDetailsOut {
  required int32 GymState = 1;
  required int32 Name = 2;
  required int32 Url = 3;
  required int32 Result = 4;
  required int32 Description = 5;
 }
-message GymStateProto {
+message GymState {
  required int32 FortMapData = 1;
  required int32 GymMembership = 2;
 }
-message StartGymBattleProto {
+message StartGymBattle {
  required int32 GymId = 1;
  required int32 AttackingPokemonId = 2;
  required int32 DefendingPokemonId = 3;
  required int32 PlayerLatDegrees = 4;
  required int32 PlayerLngDegrees = 5;
 }
-message StartGymBattleOutProto {
+message StartGymBattleOut {
  required int32 Result = 1;
  required int32 BattleStartMs = 2;
  required int32 BattleEndMs = 3;
@@ -566,7 +566,7 @@ message StartGymBattleOutProto {
  required int32 Defender = 5;
  required int32 BattleLog = 6;
 }
-message AttackGymProto {
+message AttackGym {
  required int32 GymId = 1;
  required int32 BattleId = 2;
  required int32 AttackerActions = 3;
@@ -574,7 +574,7 @@ message AttackGymProto {
  required int32 PlayerLatDegrees = 5;
  required int32 PlayerLngDegrees = 6;
 }
-message BattleActionProto {
+message BattleAction {
  required int32 Type = 1;
  required int32 ActionStartMs = 2;
  required int32 DurationMs = 3;
@@ -589,31 +589,31 @@ message BattleActionProto {
  required int32 QuitPlayer = 13;
  required int32 TargetPokemonId = 14;
 }
-message AttackGymOutProto {
+message AttackGymOut {
  required int32 Result = 1;
  required int32 BattleLog = 2;
  required int32 BattleId = 3;
  required int32 ActiveDefender = 4;
  required int32 ActiveAttacker = 5;
 }
-message GymMembershipProto {
+message GymMembership {
  required int32 Pokemon = 1;
  required int32 TrainerPublicProfile = 2;
 }
-message BattleParticipantProto {
+message BattleParticipant {
  required int32 ActivePokemon = 1;
  required int32 TrainerPublicProfile = 2;
  required int32 ReservePokemon = 3;
  required int32 DefeatedPokemon = 4;
 }
-message BattleResultsProto {
+message BattleResults {
  required int32 GymState = 1;
  required int32 Attackers = 2;
  required int32 PlayerXpAwarded = 3;
  required int32 NextDefenderPokemonId = 4;
  required int32 GymPointsDelta = 5;
 }
-message BattleLogProto {
+message BattleLog {
  required int32 State = 1;
  required int32 BattleType = 2;
  required int32 ServerMs = 3;
@@ -621,7 +621,7 @@ message BattleLogProto {
  required int32 BattleStartMs = 5;
  required int32 BattleEndMs = 6;
 }
-message HoloInventoryKeyProto {
+message HoloInventoryKey {
  required int32 PokemonId = 1;
  required int32 Item = 2;
  required int32 PokedexEntryId = 3;
@@ -633,7 +633,7 @@ message HoloInventoryKeyProto {
  required int32 EggIncubators = 9;
  required int32 PokemonFamilyId = 10;
 }
-message HoloInventoryItemProto {
+message HoloInventoryItem {
  required int32 Pokemon = 1;
  required int32 Item = 2;
  required int32 PokedexEntry = 3;
@@ -645,7 +645,7 @@ message HoloInventoryItemProto {
  required int32 EggIncubators = 9;
  required int32 PokemonFamily = 10;
 }
-message PokemonProto {
+message Pokemon {
  required int32 Id = 1;
  required int32 PokemonId = 2;
  required int32 Cp = 3;
@@ -677,19 +677,19 @@ message PokemonProto {
  required int32 Nickname = 30;
  required int32 FromFort = 31;
 }
-message ItemProto {
+message Item {
  required int32 Item = 1;
  required int32 Count = 2;
  required int32 Unseen = 3;
 }
-message PokedexEntryProto {
+message PokedexEntry {
  required int32 PokedexEntryNumber = 1;
  required int32 TimesEncountered = 2;
  required int32 TimesCaptured = 3;
  required int32 EvolutionStonePieces = 4;
  required int32 EvolutionStones = 5;
 }
-message PlayerStatsProto {
+message PlayerStats {
  required int32 Level = 1;
  required int32 Experience = 2;
  required int32 PrevLevelExp = 3;
@@ -714,24 +714,24 @@ message PlayerStatsProto {
  required int32 NumPokemonCaughtByType = 22;
  required int32 SmallRattataCaught = 23;
 }
-message PlayerCurrencyProto {
+message PlayerCurrency {
  required int32 Gems = 1;
 }
-message PlayerCameraProto {
+message PlayerCamera {
  required int32 DefaultCamera = 1;
 }
-message InventoryUpgradesProto {
+message InventoryUpgrades {
  required int32 InventoryUpgrade = 1;
 }
-message InventoryUpgradeProto {
+message InventoryUpgrade {
  required int32 Item = 1;
  required int32 UpgradeType = 2;
  required int32 AdditionalStorage = 3;
 }
-message EggIncubatorsProto {
+message EggIncubators {
  required int32 EggIncubator = 1;
 }
-message EggIncubatorProto {
+message EggIncubator {
  required int32 ItemId = 1;
  required int32 Item = 2;
  required int32 IncubatorType = 3;
@@ -740,72 +740,73 @@ message EggIncubatorProto {
  required int32 StartKmWalked = 6;
  required int32 TargetKmWalked = 7;
 }
-message AppliedItemsProto {
+message AppliedItems {
  required int32 Item = 4;
 }
-message AppliedItemProto {
+message AppliedItem {
  required int32 Item = 1;
  required int32 ItemType = 2;
  required int32 ExpirationMs = 3;
  required int32 AppliedMs = 4;
 }
-message PokemonFamilyProto {
+message PokemonFamily {
  required int32 FamilyId = 1;
  required int32 Candy = 2;
 }
-message PlayerPublicProfileProto {
+message PlayerPublicProfile {
  required int32 Name = 1;
  required int32 Level = 2;
  required int32 Avatar = 3;
 }
-message PlayerAvatarProto {
- required int32 Avatar = 8;
- required int32 Skin = 2;
- required int32 Hair = 3;
- required int32 Shirt = 4;
- required int32 Pants = 5;
- required int32 Hat = 6;
- required int32 Shoes = 7;
- required int32 Eyes = 9;
- required int32 Backpack = 10;
+// OK
+message Avatar {
+ required int32 avatar = 8;
+ required int32 skin = 2;
+ required int32 hair = 3;
+ required int32 shirt = 4;
+ required int32 pants = 5;
+ required int32 hat = 6;
+ required int32 shoes = 7;
+ required int32 eyes = 9;
+ required int32 backpack = 10;
 }
-message InventoryProto {
+message Inventory {
  required int32 InventoryItem = 1;
 }
-message InventoryItemProto {
+message InventoryItem {
  required int32 ModifiedTimestamp = 1;
  required int32 DeletedItemKey = 2;
  required int32 Item = 3;
 }
-message InventoryDeltaProto {
+message InventoryDelta {
  required int32 OriginalTimestamp = 1;
  required int32 NewTimestamp = 2;
  required int32 InventoryItem = 3;
 }
-message PlayerBadgeProto {
+message PlayerBadge {
  required int32 BadgeType = 1;
  required int32 Rank = 2;
  required int32 StartValue = 3;
  required int32 EndValue = 4;
  required int32 CurrentValue = 5;
 }
-message PlayerProfileProto {
+message PlayerProfile {
  required int32 PlayerName = 1;
 }
-message PlayerProfileOutProto {
+message PlayerProfileOut {
  required int32 Result = 1;
  required int32 StartTime = 2;
  required int32 Badges = 3;
 }
-message LevelUpRewardsProto {
+message LevelUpRewards {
  required int32 Level = 1;
 }
-message LevelUpRewardsOutProto {
+message LevelUpRewardsOut {
  required int32 Result = 1;
  required int32 Items = 2;
  required int32 ItemsUnlocked = 4;
 }
-message PokemonFortProto {
+message PokemonFort {
  required int32 FortId = 1;
  required int32 LastModifiedMs = 2;
  required int32 Latitude = 3;
@@ -823,17 +824,17 @@ message PokemonFortProto {
  required int32 Sponsor = 15;
  required int32 RenderingType = 16;
 }
-message PokemonSummaryFortProto {
+message PokemonSummaryFort {
  required int32 FortSummaryId = 1;
  required int32 LastModifiedMs = 2;
  required int32 Latitude = 3;
  required int32 Longitude = 4;
 }
-message ClientSpawnPointProto {
+message ClientSpawnPoint {
  required int32 Latitude = 2;
  required int32 Longitude = 3;
 }
-message WildPokemonProto {
+message WildPokemon {
  required int32 EncounterId = 1;
  required int32 LastModifiedMs = 2;
  required int32 Latitude = 3;
@@ -842,7 +843,7 @@ message WildPokemonProto {
  required int32 Pokemon = 7;
  required int32 TimeTillHiddenMs = 11;
 }
-message MapPokemonProto {
+message MapPokemon {
  required int32 SpawnpointId = 1;
  required int32 EncounterId = 2;
  required int32 PokedexTypeId = 3;
@@ -850,171 +851,178 @@ message MapPokemonProto {
  required int32 Latitude = 5;
  required int32 Longitude = 6;
 }
-message ClientPlayerProto {
- required int32 CreationTimeMs = 1;
- required int32 Name = 2;
- required int32 Team = 5;
- required int32 TutorialComplete = 7;
- required int32 PlayerAvatarProto = 8;
- required int32 MaxPokemonStorage = 9;
- required int32 MaxItemStorage = 10;
- required int32 DailyBonusProto = 11;
- required int32 EquippedBadgeProto = 12;
- required int32 ContactSettingsProto = 13;
- required int32 CurrencyBalance = 14;
+
+// OK
+message ClientProfile {
+ required int32 creation_time = 1;
+ required int32 username = 2;
+ required int32 team = 5;
+ required int32 tutorial_complete = 7;
+ required Avatar avatar = 8;
+ required int32 max_pokemon_storage = 9;
+ required int32 max_item_storage = 10;
+ required DailyBonus daily_bonus = 11;
+ required int32 equipped_badge = 12;
+ required int32 contact_settings = 13;
+ required Currency currency = 14;
 }
-message CurrencyQuantityProto {
- required int32 CurrencyType = 1;
- required int32 Quantity = 2;
+
+// OK
+message Currency {
+ required string type = 1;
+ required int32 quantity = 2;
 }
-message ContactSettingsProto {
+message ContactSettings {
  required int32 SendMarketingEmails = 1;
  required int32 SendPushNotifications = 2;
 }
-message DailyBonusProto {
- required int32 NextCollectTimestampMs = 1;
- required int32 NextDefenderBonusCollectTimestampMs = 2;
+
+// OK
+message DailyBonus {
+ required int32 next_collect_timestamp_ms = 1;
+ required int32 next_defender_bonus_collect_timestamp_ms = 2;
 }
-message EquippedBadgeProto {
+
+message EquippedBadge {
  required int32 EquippedBadge = 1;
  required int32 Level = 2;
  required int32 NextEquipChangeAllowedTimestampMs = 3;
 }
-message GetPlayerProto {
+message GetPlayer {
 }
-message GetPlayerOutProto {
+message GetPlayerOut {
  required int32 Success = 1;
  required int32 Player = 2;
 }
-message PlayerUpdateProto {
+message PlayerUpdate {
  required int32 Lat = 1;
  required int32 Lng = 2;
 }
-message PlayerUpdateOutProto {
+message PlayerUpdateOut {
  required int32 WildPokemon = 1;
  required int32 Fort = 2;
  required int32 FortsNearby = 3;
 }
-message GetInventoryProto {
+message GetInventory {
  required int32 TimestampMillis = 1;
  required int32 ItemBeenSeen = 2;
 }
-message GetInventoryOutProto {
+message GetInventoryOut {
  required int32 Success = 1;
  required int32 InventoryDelta = 2;
 }
-message DebugUpdateInventoryProto {
+message DebugUpdateInventory {
  required int32 Pokemon = 1;
  required int32 Item = 2;
 }
-message DebugUpdateInventoryOutProto {
+message DebugUpdateInventoryOut {
  required int32 Success = 1;
 }
-message SetFavoritePokemonProto {
+message SetFavoritePokemon {
  required int32 PokemonId = 1;
  required int32 IsFavorite = 2;
 }
-message SetFavoritePokemonOutProto {
+message SetFavoritePokemonOut {
  required int32 Result = 1;
 }
-message ReleasePokemonProto {
+message ReleasePokemon {
  required int32 PokemonId = 1;
  required int32 PokemonIds = 2;
 }
-message ReleasePokemonOutProto {
+message ReleasePokemonOut {
  required int32 Status = 1;
  required int32 CandyAwarded = 2;
 }
-message NicknamePokemonProto {
+message NicknamePokemon {
  required int32 PokemonId = 1;
  required int32 Nickname = 2;
 }
-message NicknamePokemonOutProto {
+message NicknamePokemonOut {
  required int32 Result = 1;
 }
-message DebugDeletePlayerProto {
+message DebugDeletePlayer {
 }
-message DebugDeletePlayerOutProto {
+message DebugDeletePlayerOut {
  required int32 Success = 1;
 }
-message GetSuggestedCodenamesRequestProto {
+message GetSuggestedCodenamesRequest {
 }
-message GetSuggestedCodenamesResponseProto {
+message GetSuggestedCodenamesResponse {
  required int32 Codename = 1;
  required int32 Success = 2;
 }
-message CheckCodenameAvailableRequestProto {
+message CheckCodenameAvailableRequest {
  required int32 Codename = 1;
 }
-message ClaimCodenameRequestProto {
+message ClaimCodenameRequest {
  required int32 Codename = 1;
 }
-message CodenameResultProto {
+message CodenameResult {
  required int32 Codename = 1;
  required int32 UserMessage = 2;
  required int32 IsAssignable = 3;
  required int32 Status = 4;
 }
-message SetAvatarProto {
- required int32 PlayerAvatarProto = 2;
+message SetAvatar {
+ required int32 PlayerAvatar = 2;
 }
-message SetAvatarOutProto {
+message SetAvatarOut {
  required int32 Status = 1;
  required int32 Player = 2;
 }
-message SetContactSettingsProto {
- required int32 ContactSettingsProto = 1;
+message SetContactSettings {
+ required int32 ContactSettings = 1;
 }
-message SetContactSettingsOutProto {
+message SetContactSettingsOut {
  required int32 Status = 1;
  required int32 Player = 2;
 }
-message SetPlayerTeamProto {
+message SetPlayerTeam {
  required int32 Team = 1;
 }
-message SetPlayerTeamOutProto {
+message SetPlayerTeamOut {
  required int32 Status = 1;
  required int32 Player = 2;
 }
-message MarkTutorialCompleteProto {
+message MarkTutorialComplete {
  required int32 TutorialComplete = 1;
  required int32 SendMarketingEmails = 2;
  required int32 SendPushNotifications = 3;
 }
-message MarkTutorialCompleteOutProto {
+message MarkTutorialCompleteOut {
  required int32 Success = 1;
  required int32 Player = 2;
 }
-message CheckAwardedBadgesProto {
+message CheckAwardedBadges {
 }
-message CheckAwardedBadgesOutProto {
+message CheckAwardedBadgesOut {
  required int32 Success = 1;
  required int32 AwardedBadges = 2;
  required int32 AwardedBadgeLevels = 3;
 }
-message RecycleItemProto {
+message RecycleItem {
  required int32 Item = 1;
  required int32 Count = 2;
 }
-message RecycleItemOutProto {
+message RecycleItemOut {
  required int32 Result = 1;
  required int32 NewCount = 2;
 }
-message EquipBadgeProto {
+message EquipBadge {
  required int32 Badge = 1;
 }
-message EquipBadgeOutProto {
+message EquipBadgeOut {
  required int32 Result = 1;
  required int32 Equipped = 2;
 }
-message GlobalSettingsProto {
+message GlobalSettings {
  required int32 FortSettings = 2;
  required int32 MapSettings = 3;
  required int32 LevelSettings = 4;
  required int32 InventorySettings = 5;
  required int32 MinimumClientVersion = 6;
 }
-message FortSettingsProto {
+message FortSettings {
  required int32 InteractionRangeMeters = 1;
  required int32 MaxTotalDeployedPokemon = 2;
  required int32 MaxPlayerDeployedPokemon = 3;
@@ -1022,7 +1030,7 @@ message FortSettingsProto {
  required int32 DeployAttackMultiplier = 5;
  required int32 FarInteractionRangeMeters = 6;
 }
-message MapSettingsProto {
+message MapSettings {
  required int32 PokemonVisibleRange = 1;
  required int32 PokeNavRangeMeters = 2;
  required int32 EncounterRangeMeters = 3;
@@ -1031,106 +1039,106 @@ message MapSettingsProto {
  required int32 GetMapObjectsMinDistanceMeters = 6;
  required int32 GoogleMapsApiKey = 7;
 }
-message LevelSettingsProto {
+message LevelSettings {
  required int32 TrainerCpModifier = 2;
  required int32 TrainerDifficultyModifier = 3;
 }
-message InventorySettingsProto {
+message InventorySettings {
  required int32 MaxPokemon = 1;
  required int32 MaxBagItems = 2;
  required int32 BasePokemon = 3;
  required int32 BaseBagItems = 4;
  required int32 BaseEggs = 5;
 }
-message DownloadSettingsActionProto {
+message DownloadSettingsAction {
  required int32 Sha1 = 1;
 }
-message DownloadSettingsResponseProto {
+message DownloadSettingsResponse {
  required int32 Error = 1;
  required int32 Sha1 = 2;
  required int32 Values = 3;
 }
-message TradingSearchProto {
+message TradingSearch {
  required int32 Lat = 1;
  required int32 Lng = 2;
 }
-message TradingSearchOutProto {
+message TradingSearchOut {
  required int32 Result = 1;
  required int32 PlayerNames = 2;
 }
-message TradingOfferProto {
+message TradingOffer {
  required int32 TradingPlayer = 1;
  required int32 PokemonId = 2;
 }
-message TradingOfferOutProto {
+message TradingOfferOut {
  required int32 Result = 1;
  required int32 TradeId = 2;
 }
-message PollForTradeResponseProto {
+message PollForTradeResponse {
  required int32 TradeId = 1;
  required int32 PokemonId = 2;
  required int32 RequestCancel = 3;
 }
-message PollForTradeResponseOutProto {
+message PollForTradeResponseOut {
  required int32 Result = 1;
  required int32 ReturnPokemon = 2;
 }
-message TradingResultProto {
+message TradingResult {
  required int32 TradeId = 1;
  required int32 PlayerAccept = 2;
 }
-message TradingResultOutProto {
+message TradingResultOut {
  required int32 Result = 1;
 }
-message UpgradePokemonProto {
+message UpgradePokemon {
  required int32 PokemonId = 1;
 }
-message UpgradePokemonOutProto {
+message UpgradePokemonOut {
  required int32 Result = 1;
  required int32 UpgradedPokemon = 2;
 }
-message UseItemPotionProto {
+message UseItemPotion {
  required int32 Item = 1;
  required int32 PokemonId = 2;
 }
-message UseItemPotionOutProto {
+message UseItemPotionOut {
  required int32 Result = 1;
  required int32 Stamina = 2;
 }
-message UseItemReviveProto {
+message UseItemRevive {
  required int32 Item = 1;
  required int32 PokemonId = 2;
 }
-message UseItemReviveOutProto {
+message UseItemReviveOut {
  required int32 Result = 1;
  required int32 Stamina = 2;
 }
-message UseItemGymProto {
+message UseItemGym {
  required int32 Item = 1;
  required int32 GymId = 2;
  required int32 PlayerLatDegrees = 3;
  required int32 PlayerLngDegrees = 4;
 }
-message UseItemGymOutProto {
+message UseItemGymOut {
  required int32 Result = 1;
  required int32 UpdatedGp = 2;
 }
-message UseItemXpBoostProto {
+message UseItemXpBoost {
  required int32 Item = 1;
 }
-message UseItemXpBoostOutProto {
+message UseItemXpBoostOut {
  required int32 Result = 1;
  required int32 AppliedItems = 2;
 }
-message UseItemEggIncubatorProto {
+message UseItemEggIncubator {
  required int32 ItemId = 1;
  required int32 PokemondId = 2;
 }
-message UseItemEggIncubatorOutProto {
+message UseItemEggIncubatorOut {
  required int32 Result = 1;
  required int32 EggIncubator = 2;
 }
-message PokemonProtoExtensions {
+message PokemonExtensions {
 }
-message RecyclerViewPrototype {
+message RecyclerViewtype {
 }
