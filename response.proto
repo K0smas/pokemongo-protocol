@@ -19,7 +19,7 @@ message Response {
     }
     required Type type = 1;
 
-    // Interpret this in your code using e.g. ClientProfile().ParseFromString()
+    // Interpret this in your code using ParseFromString()
     optional bytes data = 2;
   }
 
@@ -31,7 +31,6 @@ message Response {
       required int32 unknown1 = 1;
     }
   }
-
 }
 
 

@@ -17,10 +17,12 @@ message Request {
 
   message Payload {
     enum Type {
-      REQUEST_ENDPOINT = 2;
+      OK = 2;
     }
     required Type type = 1;
-    optional bytes data = 2;
+
+    // Fill this in in your code using AsString()
+    optional bytes payload = 2;
   }
 
   message Unknown6 {
